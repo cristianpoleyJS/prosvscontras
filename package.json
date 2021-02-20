@@ -1,15 +1,29 @@
 {
   "name": "prosvscontras",
+  "description": "Cristian Poley - Pros y Contras",
+  "author": {
+    "name": "Cristian Poley",
+    "email": "cristianpoleygonzalez@gmail.com"
+  },
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "eslint --fix"
   },
   "dependencies": {
     "next": "10.0.7",
     "react": "17.0.1",
     "react-dom": "17.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.18.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.22.0"
   }
 }
