@@ -4,7 +4,7 @@ import IconHeart from 'components/Icons/IconHeart'
 export default function FooterApp () {
   return (
         <>
-          <footer className="mt-14 pb-6 px-32 text-base">
+          <footer className="mt-14 pb-6 px-16 pt-6 text-base">
               <div>
                 Made with <i><IconHeart fill="#ef3075" width="24" heigth="24"/></i> and designed by<Avatar/>
                 <a href="https://cristianpoley.com" target="_blank" rel="noreferrer">

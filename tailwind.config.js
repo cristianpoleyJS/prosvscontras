@@ -5,7 +5,10 @@ module.exports = {
     extend: {
       tablet: '640px',
       laptop: '1024px',
-      desktop: '1280px'
+      desktop: '1280px',
+      backgroundImage: () => ({
+        'cristian-background-image': "url('https://storage.googleapis.com/cristian-poley-webs.appspot.com/iam.webp')"
+      })
     }
   },
   variants: {
