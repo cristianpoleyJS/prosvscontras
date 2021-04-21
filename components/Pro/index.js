@@ -1,7 +1,7 @@
-export default function Pro () {
+export default function Pro ({ pro }) {
   return (
         <>
-            <span>PROOOO</span>
+            <span className="block">{pro}</span>
         </>
   )
 }

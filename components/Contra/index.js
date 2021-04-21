@@ -1,7 +1,7 @@
-export default function Contra () {
+export default function Contra ({ contra }) {
   return (
         <>
-            <span>Contra title</span>
+            <span className="block">{contra}</span>
         </>
   )
 }
