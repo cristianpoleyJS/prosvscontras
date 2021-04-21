@@ -5,6 +5,13 @@ import IconLinkedin from 'components/Icons/IconLinkedin'
 export default function HeaderApp () {
   return (
     <>
+        <div className="py-2 bg-gradient-to-r from-indigo-600 to-light-blue-500 overflow-hidden">
+          <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-sm font-medium text-white text-center leading-8">
+              Working in progress 👨‍💻
+            </div>
+          </div>
+        </div>
         <header className="sticky top-0 z-40 font-base shadow bg-white w-full h-16 items-center">
           <nav className="flex items-center h-full px-16">
             <div className="flex-1 items-center">
@@ -18,6 +25,11 @@ export default function HeaderApp () {
             </div>
           </nav>
         </header>
+        <style jsx>{`
+          .to-light-blue-500 {
+            --tw-gradient-to: #0ea5e9;
+          }
+        `}</style>
     </>
   )
 }
