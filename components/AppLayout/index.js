@@ -5,7 +5,7 @@ import HeaderApp from 'components/HeaderApp'
 export default function AppLayout ({ children }) {
   return (
     <>
-      <main>
+      <main className="h-screen font-sans">
         <Head>
             <title>ProsVsContras</title>
             <link rel="icon" href="/favicon.ico" />
@@ -16,12 +16,6 @@ export default function AppLayout ({ children }) {
           {children}
         <FooterApp />
       </main>
-      <style jsx>{`
-        main {
-          height: 100vh;
-          margin: 0 auto;
-        }
-      `}</style>
     </>
   )
 }

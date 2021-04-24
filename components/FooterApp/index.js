@@ -12,8 +12,8 @@ export default function FooterApp () {
                       @cristianpoley
                   </a>
                 </span>
-                <a className="made-with-nextjs bg-white w-40 text-center m-auto mt-8 no-underline block p-2 font-medium rounded" href="https://nextjs.org/" target="_blank" rel="noreferrer">
-                    Made with <span>NextJS</span>
+                <a className="made-with-nextjs bg-white w-40 text-center m-auto mt-3 no-underline block p-2 font-medium rounded" href="https://nextjs.org/" target="_blank" rel="noreferrer">
+                    Made with <span className="text-indigo-500">NextJS</span>
                 </a>
               </div>
           </footer>
@@ -22,10 +22,6 @@ export default function FooterApp () {
             .made-with-nextjs {
               box-shadow: 0 1px 3px #0003, 0 6px 13px #0000001a;
               transform-origin: 50% 50%;
-            }
-
-            .made-with-nextjs span {
-              color: #186aff;
             }
           `}
           </style>
