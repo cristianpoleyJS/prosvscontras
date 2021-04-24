@@ -26,13 +26,13 @@ export default function HeaderApp () {
               </span>
               <h1 className="name-app inline-block relative m-0 align-bottom">
                 <span className="name-app-wrapper relative inline-block overflow-hidden">
-                  <span className="text inline-block text-xl text-gray-600 font-normal">ProsVsContras</span>
+                  <span className="text inline-block text-xl text-gray-600 font-normal">Pros VS Contras</span>
                 </span>
               </h1>
             </div>
             <div className="flex-2 flex">
-              <a href="https://www.linkedin.com/in/cristian-poley/" target="_blank" className="mr-4" rel="noreferrer"><IconLinkedin width="30px" height="30px" fill="#161b22"/></a>
-              <a href="https://github.com/cristianpoleyJS" target="_blank" className="mr-4" rel="noreferrer"><IconGitHub width="30px" height="30px" fill="#161b22"/></a>
+              <a href="https://www.linkedin.com/in/cristian-poley/" target="_blank" className="mr-6" rel="noreferrer"><IconLinkedin width="32px" height="32px" fill="#161b22"/></a>
+              <a href="https://github.com/cristianpoleyJS" target="_blank" className="mr-4" rel="noreferrer"><IconGitHub width="32px" height="32px" fill="#161b22"/></a>
             </div>
           </nav>
         </header>
