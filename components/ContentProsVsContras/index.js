@@ -35,7 +35,6 @@ export default function ContentProsVsContras () {
                 <div className="pt-16 px-32 relative pros overflow-hidden bg-gray-100">
                   <div className="z-10 absolute w-2/3">
                     <div className="block mb-14">
-                      {/* <h4 className="m-0">Pros</h4> */}
                       <input type="text" onKeyPress={handleAddPro} className="shadow appearance-none border rounded py-2 px-3 text-grey-darker border border-transparent focus:outline-none focus:ring-2 focus:ring-gray-100 focus:border-transparent" placeholder="Dime el Pro..."/>
                       {/* <button className="align-middle ml-4" onClick={handleAddPro}>
                         <IconAdd weight="40px" height="40px" fill="#F3F4F6"/>
@@ -55,7 +54,6 @@ export default function ContentProsVsContras () {
                 <div className="pt-16 px-32 contras relative overflow-hidden bg-indigo-500">
                   <div className="z-10 absolute w-2/3">
                     <div className="block mb-14">
-                      {/* <h4 className="m-0">Contras</h4> */}
                       <input type="text" onKeyPress={handleAddContra} className="shadow appearance-none border rounded py-2 px-3 text-grey-darker border border-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" placeholder="Dime el Contra..." />
                       {/* <button className="align-middle ml-4" onClick={handleAddContra}>
                         <IconAdd weight="40px" height="40px" fill="#F3F4F6"/>
