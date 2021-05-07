@@ -100,14 +100,14 @@ export default function ContentProsVsContras () {
             </section>
             <style jsx>{`
                 section {
-                  min-height: calc(100vh - 4rem - 4.75rem);
+                  height: calc(100vh - 4rem - 4.75rem);
                 }
                 ul {
                   max-height: calc(100vh - 78vh);
                 }
                 @media (min-width: 640px) {
                   section {
-                    min-height: calc(100vh - 4rem);
+                    height: calc(100vh - 4rem);
                   }
                   ul {
                     max-height: calc(100vh - 30vh);
