@@ -2,23 +2,20 @@ import Contra from 'components/Contra'
 import Resume from 'components/Resume'
 import Pro from 'components/Pro'
 import { useState } from 'react'
-// import IconAdd from 'components/Icons/IconAdd'
+import IconAdd from 'components/Icons/IconAdd'
 
 export default function ContentProsVsContras () {
+  const [pro, setPro] = useState('')
+  const [contra, setContra] = useState('')
+
   const [pros, setPros] = useState([])
   const [contras, setContras] = useState([])
 
-  const handleAddPro = (event) => {
-    if (event.charCode === 13 && event.target.value) {
-      setPros([...pros, event.target.value])
-      event.target.value = ''
-    }
+  const handleOnChangePro = (event) => {
+    setPro(event.target.value)
   }
-  const handleAddContra = (event) => {
-    if (event.charCode === 13 && event.target.value) {
-      setContras([...contras, event.target.value])
-      event.target.value = ''
-    }
+  const handleOnChangeContra = (event) => {
+    setContra(event.target.value)
   }
 
   const removePro = (pro) => {
@@ -29,40 +26,71 @@ export default function ContentProsVsContras () {
     setContras(contras.filter(c => c !== contra))
   }
 
+  const handleAddPro = (event) => {
+    event.preventDefault()
+    if (pro && !pros.includes(pro)) {
+      setPros([...pros, pro])
+      setPro('')
+    }
+  }
+  const handleAddContra = (event) => {
+    event.preventDefault()
+    if (contra && !contras.includes(contra)) {
+      setContras([...contras, contra])
+      setContra('')
+    }
+  }
+
   return (
         <>
-            <section className="grid grid-flow-col grid-cols-2 relative">
-                <div className="pt-16 px-32 relative pros overflow-hidden bg-gray-100">
-                  <div className="z-10 absolute w-2/3">
-                    <div className="block mb-14">
-                      <input type="text" onKeyPress={handleAddPro} className="shadow appearance-none border rounded py-2 px-3 text-grey-darker border border-transparent focus:outline-none focus:ring-2 focus:ring-gray-100 focus:border-transparent" placeholder="Dime el Pro..."/>
-                      {/* <button className="align-middle ml-4" onClick={handleAddPro}>
-                        <IconAdd weight="40px" height="40px" fill="#F3F4F6"/>
-                      </button> */}
-                    </div>
-                    <ul>
+            <section className="grid grid-flow-row sm:grid-flow-col sm:grid-cols-2 relative">
+                <div id="pros" className="pros relative overflow-hidden bg-indigo-500 sm:bg-gray-100">
+                  <div className="z-10 absolute w-full mb-14 lg:pt-16 lg:px-32 pt-10 sm:px-10 sm:pl-10 pl-10">
+                    <form className="block">
+                      <input
+                        type="text"
+                        value={pro}
+                        onChange={handleOnChangePro}
+                        className="shadow w-5/6 sm:w-2/3 appearance-none border rounded py-2 px-3 text-grey-darker border border-transparent focus:outline-none focus:ring-2 focus:ring-gray-100 focus:border-transparent"
+                        placeholder="Nice, pon el Pro..."
+                      />
+                      <button className="align-middle ml-2 focus:outline-none" onClick={handleAddPro}>
+                        <IconAdd weight="32px" height="32px" color="#fff"/>
+                      </button>
+                    </form>
+                    <ul className="overflow-y-auto overflow-x-hidden mt-8">
                         {pros.map((pro, ix) => {
                           return (
-                          <li className="text-white" key={ix}>
+                          <li className="text-white text-sm mr-6" key={ix}>
                             <Pro pro={pro} remove={removePro}/>
                           </li>)
                         })}
                     </ul>
                   </div>
                 </div>
-                <Resume prosLength={pros.length} contrasLength={contras.length}/>
-                <div className="pt-16 px-32 contras relative overflow-hidden bg-indigo-500">
-                  <div className="z-10 absolute w-2/3">
-                    <div className="block mb-14">
-                      <input type="text" onKeyPress={handleAddContra} className="shadow appearance-none border rounded py-2 px-3 text-grey-darker border border-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" placeholder="Dime el Contra..." />
-                      {/* <button className="align-middle ml-4" onClick={handleAddContra}>
-                        <IconAdd weight="40px" height="40px" fill="#F3F4F6"/>
-                      </button> */}
-                    </div>
-                    <ul className="z-10">
+
+                <Resume
+                  prosLength={pros.length}
+                  contrasLength={contras.length} />
+
+                <div className="contras relative overflow-hidden bg-gray-100 sm:bg-indigo-500">
+                  <div className="z-10 absolute w-full lg:pt-16 lg:px-32 pt-10 sm:px-10 sm:pl-10 pl-10">
+                    <form className="block ml-0 sm:ml-6">
+                      <input
+                        type="text"
+                        value={contra}
+                        onChange={handleOnChangeContra}
+                        className="shadow w-5/6 sm:w-2/3 appearance-none border rounded py-2 px-3 text-grey-darker border border-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                        placeholder="Shit, pon la Contra..."
+                      />
+                      <button className="align-middle ml-2 focus:outline-none" onClick={handleAddContra}>
+                        <IconAdd weight="32px" height="32px"/>
+                      </button>
+                    </form>
+                    <ul id="contras" className="overflow-y-auto overflow-x-hidden mt-8">
                         {contras.map((contra, ix) => {
                           return (
-                            <li className="" key={ix}>
+                            <li className="mr-6" key={ix}>
                               <Contra contra={contra} remove={removeContra}/>
                             </li>)
                         })}
@@ -72,17 +100,29 @@ export default function ContentProsVsContras () {
             </section>
             <style jsx>{`
                 section {
-                  height: calc(100vh - 64px);
+                  height: calc(100vh - 4rem - 4.75rem);
+                }
+                ul {
+                  max-height: calc(100vh - 78vh);
+                }
+                @media (min-width: 640px) {
+                  section {
+                    height: calc(100vh - 4rem);
+                  }
+                  ul {
+                    max-height: calc(100vh - 30vh);
+                  }
                 }
                 .pros:before {
                   transform: skew(-5deg);
                   background-color: #6366F1;
                   height: 100%;
-                  width: 110%;
+                  width: 115%;
                   content: '';
                   top: 0;
                   position: absolute;
-                  left: -10%;
+                  display: none;
+                  left: -15%;
                   right: 0;
                   z-index: 0;
                 }
@@ -90,15 +130,48 @@ export default function ContentProsVsContras () {
                   transform: skew(-5deg);
                   background-color: #F3F4F6;
                   height: 100%;
-                  width: 110%;
+                  width: 115%;
                   content: '';
                   top: 0;
+                  display: none;
                   position: absolute;
                   left: 0;
                   z-index: 0;
                 }
+
+                @media (min-width: 768px) {
+                  .pros:before {
+                    left: -10%;
+                    width: 110%;
+                  }
+                  .contras:before {
+                    width: 110%;
+                  }
+                }
+                @media (min-width: 640px) {
+                  .pros:before {
+                    display: block;
+                  }
+                  .contras:before {
+                    display: block;
+                  }
+                }
+                ul::-webkit-scrollbar {
+                  width: .25rem;
+                  height: .25rem;
+                }
+
+                ul::-webkit-scrollbar-track {
+                  background: transparent;
+                }
+
+                ul::-webkit-scrollbar-thumb {
+                  background-color: #bdbdbd;
+                  border-radius: .625rem;
+                }
                 li {
                   animation: slidein 0.4s;
+                  min-height: 2rem;
                 }
 
                 @keyframes slidein {

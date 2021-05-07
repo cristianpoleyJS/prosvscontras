@@ -5,7 +5,7 @@ import HeaderApp from 'components/HeaderApp'
 export default function AppLayout ({ children }) {
   return (
     <>
-      <main className="h-screen font-sans">
+      <main className="h-screen font-sans bg-gray-100">
         <Head>
             <title>ProsVsContras</title>
             <link rel="icon" href="/favicon.ico" />
