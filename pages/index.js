@@ -1,9 +1,9 @@
 import ContentProsVsContras from 'components/ContentProsVsContras'
 
-export default function Home () {
+export default function Home ({ themeMode }) {
   return (
     <>
-      <ContentProsVsContras />
+      <ContentProsVsContras themeMode={themeMode}/>
     </>
   )
 }
