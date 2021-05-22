@@ -5,7 +5,7 @@ import IconThinking from 'components/Icons/IconThinking'
 export default function Resume ({ prosLength, contrasLength }) {
   return (
         <>
-            <section className="z-20 absolute top-1/2 left-1/2 transform lg:w-52 lg:h-52 w-32 h-32 rounded-full -translate-x-1/2 sm:-translate-y-1/2 -translate-y-20 shadow-xl block bg-white">
+            <section className="z-20 absolute top-1/2 left-1/2 transform lg:w-52 lg:h-52 w-32 h-32 rounded-full -translate-x-1/2 sm:-translate-y-1/2 -translate-y-20 shadow-xl block bg-white dark:bg-gray-800">
                 <div className="text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                   <span>{
                       prosLength === 0 && contrasLength === 0

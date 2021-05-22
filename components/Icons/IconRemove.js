@@ -4,7 +4,7 @@ export default function IconRemove (props) {
       xmlns="http://www.w3.org/2000/svg"
       className="prefix__h-6 prefix__w-6"
       viewBox="0 0 24 24"
-      stroke="currentColor"
+      stroke={props.fill}
       {...props}
     >
       <path
