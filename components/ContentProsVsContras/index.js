@@ -4,7 +4,7 @@ import Pro from 'components/Pro'
 import { useState } from 'react'
 import IconAdd from 'components/Icons/IconAdd'
 
-export default function ContentProsVsContras () {
+export default function ContentProsVsContras ({ themeMode }) {
   const [pro, setPro] = useState('')
   const [contra, setContra] = useState('')
 
@@ -44,7 +44,7 @@ export default function ContentProsVsContras () {
   return (
         <>
             <section className="grid grid-flow-row sm:grid-flow-col sm:grid-cols-2 relative">
-                <div id="pros" className="pros relative overflow-hidden bg-indigo-500 sm:bg-gray-100">
+                <div id="pros" className={`pros relative overflow-hidden bg-indigo-500 sm:dark:bg-gray-900 sm:bg-gray-100 ${themeMode}`}>
                   <div className="z-10 absolute w-full mb-14 lg:pt-16 lg:px-32 pt-10 sm:px-10 sm:pl-10 pl-10">
                     <form className="block">
                       <input
@@ -52,17 +52,17 @@ export default function ContentProsVsContras () {
                         value={pro}
                         onChange={handleOnChangePro}
                         className="shadow w-5/6 sm:w-2/3 appearance-none border rounded py-2 px-3 text-grey-darker border border-transparent focus:outline-none focus:ring-2 focus:ring-gray-100 focus:border-transparent"
-                        placeholder="Nice, pon el Pro..."
+                        placeholder="La parte buena es..."
                       />
                       <button className="align-middle ml-2 focus:outline-none" onClick={handleAddPro}>
-                        <IconAdd weight="32px" height="32px" color="#fff"/>
+                        <IconAdd weight="32px" height="32px" fill="#fff"/>
                       </button>
                     </form>
                     <ul className="overflow-y-auto overflow-x-hidden mt-8">
                         {pros.map((pro, ix) => {
                           return (
                           <li className="text-white text-sm mr-6" key={ix}>
-                            <Pro pro={pro} remove={removePro}/>
+                            <Pro pro={pro} remove={removePro} themeMode={themeMode}/>
                           </li>)
                         })}
                     </ul>
@@ -73,7 +73,7 @@ export default function ContentProsVsContras () {
                   prosLength={pros.length}
                   contrasLength={contras.length} />
 
-                <div className="contras relative overflow-hidden bg-gray-100 sm:bg-indigo-500">
+                <div className={`contras relative overflow-hidden bg-gray-100 dark:bg-gray-900 sm:dark:bg-indigo-500 sm:bg-indigo-500 ${themeMode}`}>
                   <div className="z-10 absolute w-full lg:pt-16 lg:px-32 pt-10 sm:px-10 sm:pl-10 pl-10">
                     <form className="block ml-0 sm:ml-6">
                       <input
@@ -81,17 +81,17 @@ export default function ContentProsVsContras () {
                         value={contra}
                         onChange={handleOnChangeContra}
                         className="shadow w-5/6 sm:w-2/3 appearance-none border rounded py-2 px-3 text-grey-darker border border-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                        placeholder="Shit, pon la Contra..."
+                        placeholder="Pero la mala es..."
                       />
                       <button className="align-middle ml-2 focus:outline-none" onClick={handleAddContra}>
-                        <IconAdd weight="32px" height="32px"/>
+                        <IconAdd weight="32px" height="32px" fill={themeMode === 'dark' ? '#FFF' : 'black'}/>
                       </button>
                     </form>
                     <ul id="contras" className="overflow-y-auto overflow-x-hidden mt-8">
                         {contras.map((contra, ix) => {
                           return (
                             <li className="mr-6" key={ix}>
-                              <Contra contra={contra} remove={removeContra}/>
+                              <Contra contra={contra} remove={removeContra} themeMode={themeMode}/>
                             </li>)
                         })}
                     </ul>
@@ -100,7 +100,7 @@ export default function ContentProsVsContras () {
             </section>
             <style jsx>{`
                 section {
-                  height: calc(100vh - 4rem - 4.75rem);
+                  height: calc(100vh - 7.75rem);
                 }
                 ul {
                   max-height: calc(100vh - 78vh);
@@ -128,7 +128,6 @@ export default function ContentProsVsContras () {
                 }
                 .contras:before {
                   transform: skew(-5deg);
-                  background-color: #F3F4F6;
                   height: 100%;
                   width: 115%;
                   content: '';
@@ -137,6 +136,12 @@ export default function ContentProsVsContras () {
                   position: absolute;
                   left: 0;
                   z-index: 0;
+                }
+                .contras:before {
+                  background-color: #F3F4F6;
+                }
+                .contras.dark:before {
+                  background-color: #101827;
                 }
 
                 @media (min-width: 768px) {
