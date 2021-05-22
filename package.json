@@ -5,7 +5,7 @@
     "name": "Cristian Poley",
     "email": "cristianpoleygonzalez@gmail.com"
   },
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -14,22 +14,22 @@
     "lint": "eslint --fix"
   },
   "dependencies": {
-    "animejs": "^3.2.1",
+    "animejs": "3.2.1",
     "next": "10.0.7",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "react-toggle-dark-mode": "^1.0.4"
+    "react-toggle-dark-mode": "1.0.4"
   },
   "devDependencies": {
-    "autoprefixer": "^10.2.4",
-    "eslint": "^7.18.0",
-    "eslint-config-standard": "^16.0.2",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.22.0",
-    "postcss": "^8.2.6",
-    "tailwindcss": "^2.0.3"
+    "autoprefixer": "10.2.4",
+    "eslint": "7.18.0",
+    "eslint-config-standard": "16.0.2",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-react": "7.22.0",
+    "postcss": "8.2.6",
+    "tailwindcss": "2.0.3"
   },
   "engines": {
     "node": ">=v14.15.4"

@@ -100,7 +100,7 @@ export default function ContentProsVsContras ({ themeMode }) {
             </section>
             <style jsx>{`
                 section {
-                  height: calc(100vh - 4rem - 4.75rem);
+                  height: calc(100vh - 7.75rem);
                 }
                 ul {
                   max-height: calc(100vh - 78vh);

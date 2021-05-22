@@ -1,7 +1,7 @@
 import IconRemove from 'components/Icons/IconRemove'
 
 export default function Contra ({ contra, remove, themeMode }) {
-  const fillColorIcon = themeMode === 'dark' ? '#FFF' : '#F3F4F6'
+  const fillColorIcon = themeMode === 'dark' ? '#FFF' : 'black'
   return (
         <>
           <p className="block break-all">

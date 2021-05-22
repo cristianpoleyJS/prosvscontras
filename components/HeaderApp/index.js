@@ -29,23 +29,17 @@ export default function HeaderApp ({ themeMode, setThemeMode }) {
               </span>
               <h1 className="name-app inline-block relative m-0 align-bottom">
                 <span className="name-app-wrapper relative inline-block overflow-hidden dark:text-white text-indigo-500">
-                  <span className="text inline-block text-xl">Pros VS Contras</span>
+                  <span className="text font-medium inline-block text-xl">Pros VS Contras</span>
                 </span>
               </h1>
             </div>
-            <div className="flex-2 flex">
+            <div className="flex-2 flex gap-2">
               <span className="mr-2 lg:mr-6"><ThemeMode themeMode={themeMode} setThemeMode={setThemeMode}/></span>
               <a href="https://www.linkedin.com/in/cristian-poley/" target="_blank" className="mr-2 lg:mr-6" rel="noreferrer"><IconLinkedin width="32px" height="32px" fill={fillColorIcon}/></a>
               <a href="https://github.com/cristianpoleyJS" target="_blank" rel="noreferrer"><IconGitHub width="32px" height="32px" fill={fillColorIcon}/></a>
             </div>
           </nav>
         </header>
-        <style jsx>{`
-          .text {
-            transform-origin: 0 0;
-            font-weight: 500;
-          }
-        `}</style>
     </>
   )
 }
