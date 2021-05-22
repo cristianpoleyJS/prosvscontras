@@ -17,7 +17,8 @@
     "animejs": "^3.2.1",
     "next": "10.0.7",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "react-toggle-dark-mode": "^1.0.4"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.4",
