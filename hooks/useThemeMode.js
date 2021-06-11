@@ -14,7 +14,9 @@ export default function useThemeMode () {
   }, [themeMode])
 
   useEffect(() => {
-    setThemeMode(localStorage.getItem('themeMode'))
+    !localStorage.getItem('themeMode')
+      ? setThemeMode(LIGHT)
+      : setThemeMode(localStorage.getItem('themeMode'))
     setDocumentClass()
   }, [])
 
@@ -22,9 +24,7 @@ export default function useThemeMode () {
 }
 
 function setDocumentClass () {
-  if (localStorage.getItem('themeMode') === DARK) {
-    document.documentElement.classList.add(DARK)
-  } else {
-    document.documentElement.classList.remove(DARK)
-  }
+  localStorage.getItem('themeMode') === DARK
+    ? document.documentElement.classList.add(DARK)
+    : document.documentElement.classList.remove(DARK)
 }
